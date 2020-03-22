@@ -1,4 +1,7 @@
 // 토마토
+// box[i][j]일 경우에 각각 큐에 push하고 bfs돌리고 push하고 bfs 돌리면 안됨
+// 그러면 먼저 push된 원소 기준으로 끝까지 탐색하느라 나중에 push된 원소는 탐색 못함
+// 한번에 몰아서 큐에 push 한 후에 bfs 돌려야 함
 #include <bits/stdc++.h>
 using namespace std;
 
