@@ -1,0 +1,19 @@
+// 자릿수 더하기
+#include <iostream>
+
+using namespace std;
+
+int solution(int n) {
+    int answer = 0;
+
+    while (n != 0) {
+        answer += n%10;
+        n /= 10;
+    }
+    return answer;
+}
+
+int main(void) {
+    cout << solution(123) << '\n';
+    cout << solution(987) << '\n';
+}
