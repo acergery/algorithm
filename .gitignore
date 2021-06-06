@@ -5,3 +5,5 @@ test.cpp
 tempCodeRunnerFile.cpp
 kakao*.cpp
 line*.cpp
+venv/
+.idea/
