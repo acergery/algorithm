@@ -3,29 +3,22 @@
 https://programmers.co.kr/learn/courses/30/lessons/60057
 '''
 def solution(s):
-    length = []
-    result = ""
-    for cut in range(1, len(s)//2 + 2):
+    ans = len(s)
+    for cut in range(1, len(s)//2 + 1):
+        compressed = ""
         prev = s[:cut]
         cnt = 1
         for i in range(cut, len(s), cut):
             if s[i:i+cut] == prev:
                 cnt += 1
             else:
-                if cnt == 1:
-                    cnt = ""
-                result += str(cnt) + prev
+                compressed += str(cnt) + prev if cnt > 1 else prev
                 prev = s[i:i+cut]
                 cnt = 1
 
-        if cnt == 1:
-            cnt = ""
-        result += str(cnt) + prev
-        length.append(len(result))
-        print(result, len(result))
-        result = ""
-
-    return min(length)
+        compressed += str(cnt) + prev if cnt > 1 else prev
+        ans = min(ans, len(compressed))
+    return ans
 
 a = [
     "aabbaccc",
